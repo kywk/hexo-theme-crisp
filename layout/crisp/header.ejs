@@ -1,0 +1,5 @@
+<header id="header" <% if (theme.cover) { %> style="background-image: url(<%- theme.cover %>)" <% } %>>
+  <% if (theme.logo) { %> <a id="logo" href="<%- config.root %>"><img src="<%- theme.logo %>" alt="<%- config.title %>" /></a><% } %>
+  <h1><a href="<%- config.root %>"><%- config.title %></a></h1>
+  <p><%- config.description %></p>
+</header>
