@@ -1,18 +1,27 @@
 
 <main id="content">
   <% page.posts.each(function(post) { %>
-  <section id="<%- post._id %>" class="post tag-strategy"></section>
-    <h3 class="post-title">
-      <a href="<%- config.root %><%- post.path %>"><%- post.title %></a>
-      <span class="separator"> &middot; </span>
-      <%- date(post.date, null) %>
-      <span class="taglist"><% if (post.tags && post.tags.length){ %>  &middot; <% post.tags.forEach(function(tag) { %><a href='<%= config.root + tag.path %>' style='margin:0 5px;'><%= tag.name %></a><% }); %><% } %></span>
-    </h3>
+  <section id="<%- post._id %>" class="postlist tag-strategy">
+    <img src="<%- post.thumb %>" class="index_post_thumb" />
+    <div class="index_post_info">
+      <h3>
+        <a href="<%- config.root %><%- post.path %>"><%- post.title %></a>
+        <span style="font-size: .7em">
+          <span class="separator"> &middot; </span>
+          <%- date(post.date, null) %>
+          <span class="taglist"><% if (post.tags && post.tags.length){ %>  &middot; <% post.tags.forEach(function(tag) { %><a href='<%= config.root + tag.path %>' style='margin:0 5px;'><%= tag.name %></a><% }); %><% } %></span>
+        </span>
+      </h3>
+      <span class="index_post_desc"><%- post.desc %></span>
+    </div>
+  </section>
   <% }); %>
 </main>
 
+<% if (page.total > 1) { %>
 <nav class="pagination">
   <% if (page.prev) { %><a class="newer-posts" href="<%- config.root %><%- page.prev_link %>">&larr; Newer</a><% } %>
   <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
   <% if (page.next) { %><a class="older-posts" href="<%- config.root %><%- page.next_link %>">Older &rarr;</a><% } %>
 </nav>
+<% } %>

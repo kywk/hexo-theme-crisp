@@ -3,5 +3,9 @@ cover: //ghostscroll.grmmph.com/content/images/2014/Feb/cover2.jpg
 logo: //blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png
 bio: 'A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.'
 
+# authors [name, title, figure, homepage url, corporate]
+authors:
+- ['MooCow', 'Site Maintainer', 'https://avatars3.githubusercontent.com/u/714630?s=460', 'http://kywk.github.io/moco/', 'III']
+
 # Content
 excerpt_link: Read More

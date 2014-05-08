@@ -2,4 +2,18 @@
   <% if (theme.logo) { %> <a id="logo" href="<%- config.root %>"><img src="<%- theme.logo %>" alt="<%- config.title %>" /></a><% } %>
   <h1><a href="<%- config.root %>"><%- config.title %></a></h1>
   <p><%- config.description %></p>
+  <div class="author-wrapper">
+    <div class="author">
+    <% for (var i = 0; i < theme.authors.length; i++) { %>
+      <div class="info">
+        <img class="figure" src="<%- theme.authors[i][2] %>" />
+        <div class="title"><%- theme.authors[i][1] %></div>
+        <div class="name">
+          <a href="<%- theme.authors[i][3] %>"><%- theme.authors[i][0] %></a>
+          <% if (theme.authors[i][4]) { %>, <%- theme.authors[i][4] %> <% } %>
+        </div>
+      </div>
+    <% } %>
+    </div>
+  </div>
 </header>
